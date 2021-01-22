@@ -1,0 +1,148 @@
+body, html {
+    width: 100px !important;
+    height: 100vh !important;
+  }
+  
+  .login-page {
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    display: flex;
+  }
+  
+  .login-form {
+    width: 55%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .login-form_image {
+    width: 300px;
+    user-select: none;
+  }
+  
+  .login-form h3 {
+    text-align: left;
+  }
+  
+  .login-form_title {
+    font-size: 21px;
+    color: #68747b;
+  }
+  
+  .login-form_subtitle {
+    color: #1976D2;
+    font-weight: bold;
+    font-size: 20px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .login-form_subtitle::after, .login-form_subtitle::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    top: 50%;
+    background: #1976D2;
+    transform: translateY(-50%);
+  }
+  
+  .login-form_subtitle::after {
+    right: -10px;
+  }
+  
+  .login-form_subtitle::before {
+    left: -10px;
+  }
+  
+  .login-form_footer {
+    color: #1c4584;
+    line-height: 2px;
+    font-weight: bold;
+    margin-top: 80px;
+  }
+  
+  .form-group {
+    width: 300px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #e7e7e7;
+    color: #444444;
+  }
+  
+  .form-errors {
+    color: #ac2f2f;
+    text-align: left;
+  }
+  
+  .form-control-incorrect {
+    border: 1px solid #ac2f2f;
+  }
+  
+  .btn-form {
+    transition: .4s ease-in-out;
+    background-color: #e22961;
+    padding: 5px 32px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn-form:hover {
+    background-color: #cb2d5b;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px #0000004d;
+  }
+  
+  .btn-form-text {
+    margin-top: 16px;
+    color: #1976D2;
+    text-decoration: underline;
+    line-height: 20px;
+    display: block;
+  }
+  
+  .login-image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .buttonGIS{
+    margin-top: 16px;
+    line-height: 25px;
+  }
+  
+  
+  @media (max-width: 1050px) {
+    .login-form {
+      width: 70%;
+    }
+  
+    .login-image {
+      width: 30%;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .login-image {
+      display: none;
+    }
+  
+    .login-form {
+      width: 100%;
+    }
+  }
+  

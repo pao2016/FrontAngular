@@ -1,0 +1,56 @@
+
+<section class="login-page">
+  <article class="login-form">
+    <h1>Bienvenido a la prueba tecnica</h1>
+    <form [formGroup]="loginForm" (ngSubmit)=onSubmit()>
+      <h3>Ingrese sus datos</h3>
+      <section class="form-group">
+        <input
+          id="email"
+          class="form-control"
+          [ngClass]="{'form-control-incorrect': incorrectData}"
+          type="email"
+          (change)="incorrectData = false"
+          placeholder="Correo Electrónico"
+          formControlName="email"
+          autofocus
+          required>
+      </section>
+      <section class="form-errors" *ngIf="email.invalid && (email.dirty || email.touched)">
+        <p *ngIf="email.errors.required"
+        >Campo obligatorio</p>
+        <p *ngIf="email.errors.email"
+        >Formato Incorrecto</p>
+      </section>
+
+      <section class="form-group">
+        <input
+          class="form-control"
+          type="password"
+          [ngClass]="{'form-control-incorrect': incorrectData}"
+          (change)="incorrectData = false"
+          placeholder="Contraseña"
+          formControlName="password"
+          required>
+      </section>
+      <section class="form-errors" *ngIf="password.invalid && (password.dirty || password.touched)">
+        <p *ngIf="password.errors.required"
+        >Campo obligatorio</p>
+        <p *ngIf="password.errors.pattern"
+        >Formato Incorrecto 2</p>
+      </section>
+
+      <button type="submit" class="btn-form"
+              [disabled]="!loginForm.valid">
+        <span>Aceptar</span>
+      </button>
+      
+    
+     
+    </form>
+
+   
+  </article>
+
+</section>
+
