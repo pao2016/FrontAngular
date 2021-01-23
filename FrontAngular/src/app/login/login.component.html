@@ -1,5 +1,6 @@
 
 <section class="login-page">
+  <p-toast position="top-center"></p-toast>
   <article class="login-form">
     <h1>Bienvenido a la prueba tecnica</h1>
     <form [formGroup]="loginForm" (ngSubmit)=onSubmit()>
@@ -40,8 +41,7 @@
         >Formato Incorrecto 2</p>
       </section>
 
-      <button type="submit" class="btn-form"
-              [disabled]="!loginForm.valid">
+      <button type="submit" class="btn-form" (click)="aceptar()">
         <span>Aceptar</span>
       </button>
       

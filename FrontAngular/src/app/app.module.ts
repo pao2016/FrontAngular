@@ -9,11 +9,15 @@ import { HttpClientModule } from '@angular/common/http';
 import {AccordionModule} from 'primeng/accordion';     
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+import {ToastModule} from 'primeng/toast';
 @NgModule({
   declarations: [
     AppComponent,
     UsuarioComponent,
     LoginComponent,
+ 
     
   ],
   imports: [
@@ -25,7 +29,9 @@ import { RouterModule } from '@angular/router';
     HttpClientModule,
     BrowserAnimationsModule,
     RouterModule,
-  
+    MessagesModule,
+    MessageModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

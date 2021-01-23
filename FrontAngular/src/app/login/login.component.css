@@ -6,7 +6,7 @@ body, html {
   .login-page {
     width: 100%;
     height: 100vh;
-    background: #fff;
+    background: rgb(246, 246, 247);
     display: flex;
   }
   
@@ -76,7 +76,7 @@ body, html {
   .form-control {
     width: 100%;
     padding: 10px 14px;
-    border: 1px solid #e7e7e7;
+    border: 1px solid #eff1f7;
     color: #444444;
   }
   
@@ -93,7 +93,7 @@ body, html {
     transition: .4s ease-in-out;
     background-color: #e22961;
     padding: 5px 32px;
-    color: #fff;
+    color: rgb(237, 238, 241);
     border: none;
     cursor: pointer;
   }
@@ -146,3 +146,16 @@ body, html {
     }
   }
   
+  button {
+    min-width: 10rem;
+    margin-right: .5rem;
+}
+
+@media screen and (max-width: 960px) {
+    button {
+        width: 100%;
+        margin-bottom: .5rem;
+    }
+}
+
+
