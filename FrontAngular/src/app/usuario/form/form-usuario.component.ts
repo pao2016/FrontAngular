@@ -20,10 +20,6 @@ export class FormUsuarioComponent implements OnInit {
 
   user: User = new User();
   userRegistered: User;
-  rolsSelect: SelectItemGroup[];
-  selectedRols: Array<string> = [];
-  calendarES: any;
-  minDate: Date;
   userForm: FormGroup;
   msgs: Message[];
 
