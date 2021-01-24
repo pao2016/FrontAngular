@@ -3,8 +3,8 @@ import { SelectItemGroup } from 'primeng/api';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {User} from '../usuario';
 import {ServiceUserService} from '../service-user.service';
-import { MessageService } from 'primeng/api';
-
+import {Message, MessageService } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-usuario',
@@ -25,21 +25,23 @@ export class FormUsuarioComponent implements OnInit {
   calendarES: any;
   minDate: Date;
   userForm: FormGroup;
+  msgs: Message[];
 
   constructor(private  serviceUserService:ServiceUserService, 
-    private MessageService: MessageService) { }
+    private messageService: MessageService, 
+    private router: Router) { }
 
   get name() {
     return this.userForm.get('name');
   }
   get username() {
-    return this.userForm.get('name');
+    return this.userForm.get('username');
   }
   get email() {
-    return this.userForm.get('name');
+    return this.userForm.get('email');
   }
   get password() {
-    return this.userForm.get('name');
+    return this.userForm.get('password');
   }
 
 
@@ -79,15 +81,29 @@ export class FormUsuarioComponent implements OnInit {
   getValuesForm() {
     const USER = new User();
     USER.name = this.name.value;
+    USER.username = this.username.value;
+    USER.email = this.email.value;
+    USER.password = this.password.value;
     
     return USER;
   }
 
   save() {
     const USER = this.getValuesForm();
-    if (this.newUser) {
-      return this.serviceUserService.crearUser(USER);
-    } 
+    console.log("el usuario a guardar",USER);
+    this.serviceUserService.crearUser(USER)  .subscribe( (resp: any) => {
+     if (resp.ok){
+   
+      this.messageService.add({ severity: 'success', summary: 'Información', detail: 'Se guardo correctameente' });
+      setTimeout(() => {
+        this.router.navigate(['/usuario/index']);
+      }, 1000);
+    
+     } else{
+      this.messageService.add({ severity: 'error', summary: 'Información', detail: 'Ups!, transacion no existo' });
+     }
+    })
+    
   }
 
   

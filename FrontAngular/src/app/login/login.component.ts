@@ -63,8 +63,9 @@ export class LoginComponent implements OnInit {
 
   aceptar() {
     const existe = this.users.filter(x => x.email === this.email.value);
+    const password = this.users.filter(x => x.password === this.password.value);
     console.log(existe);
-    if (existe.length > 0) {
+    if (existe.length > 0 &&  password.length > 0) {
 
       this.messageService.add({ severity: 'success', summary: 'Información', detail: 'Login correcto' });
       setTimeout(() => {

@@ -1,4 +1,5 @@
 <form [formGroup]="userForm" class="form">
+  <p-toast position="top-center"></p-toast>
   <article class="login-form"> 
 
     <article class="ui-g-12">
@@ -82,7 +83,7 @@
                *ngIf="password.errors.required"
             >Campo obligatorio</p>
             <p class="form-control-incorrect "
-               *ngIf="password.errors.email"
+               *ngIf="password.errors.password"
             >Formato Incorrecto</p>
             <p class="form-control-incorrect "
                *ngIf="password.errors.whitespace"
@@ -93,10 +94,9 @@
   
 
 
-    <section class="ui-g-2" *ngIf="!viewMode" class="form-control">
+    <section class="ui-g-2" class="form-control">
       <button type="button" pButton class="ui-button-success" icon="pi pi-check"
               (click)="save()"
-              [disabled]="!userForm.valid || validationRols"
               label="Guardar"></button>
     </section>
   </article>
