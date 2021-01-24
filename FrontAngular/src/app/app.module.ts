@@ -12,12 +12,24 @@ import { RouterModule } from '@angular/router';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import {ToastModule} from 'primeng/toast';
+import { CreateUsuarioComponent } from './usuario/create/create-usuario.component';
+import {FormUsuarioComponent} from './usuario/form/form-usuario.component';
+import {IndexUsuarioComponent} from './usuario/index/index-usuario.component';
+import {ListboxModule} from 'primeng/listbox';
+import {ButtonModule} from 'primeng/button';
+import { SharedComponent } from './shared/shared.component';
+import {TableModule} from 'primeng/table';
+
 @NgModule({
   declarations: [
     AppComponent,
     UsuarioComponent,
     LoginComponent,
- 
+    CreateUsuarioComponent,
+    FormUsuarioComponent,
+    IndexUsuarioComponent,
+    SharedComponent
+
     
   ],
   imports: [
@@ -31,7 +43,10 @@ import {ToastModule} from 'primeng/toast';
     RouterModule,
     MessagesModule,
     MessageModule,
-    ToastModule
+    ToastModule,
+    ListboxModule,
+    ButtonModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

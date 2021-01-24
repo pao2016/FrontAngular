@@ -112,13 +112,7 @@ body, html {
     display: block;
   }
   
-  .login-image {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-  }
+
   
   .buttonGIS{
     margin-top: 16px;

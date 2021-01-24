@@ -21,7 +21,8 @@ export class LoginComponent implements OnInit {
   msgs: Message[];
   constructor(
     private loginService: LoginService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private router: Router
 
   ) {
     this.cargarUsuarios();
@@ -64,10 +65,14 @@ export class LoginComponent implements OnInit {
     const existe = this.users.filter(x => x.email === this.email.value);
     console.log(existe);
     if (existe.length > 0) {
+
       this.messageService.add({ severity: 'success', summary: 'Información', detail: 'Login correcto' });
+      setTimeout(() => {
+        this.router.navigate(['/usuario/index']);
+      }, 500);
     }
     else {
-      this.messageService.add({ severity: 'success', summary: 'Información', detail: 'Correo y/o contraseña incorrectos' });
+      this.messageService.add({ severity: 'error', summary: 'Información', detail: 'Correo y/o contraseña incorrectos' });
     }
   }
 
