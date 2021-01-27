@@ -27,12 +27,12 @@ export class IndexEstanteriaComponent implements OnInit {
 
   ngOnInit(): void {
     
-  this.cargarUsuarios();
+  this.cargarEstantes();
   }
 
 
 
-  cargarUsuarios() {
+  cargarEstantes() {
     this.estanteriaService.cargaEstanteria().subscribe(
       resp => {
         this.lisEstanterias = resp.estanerias;

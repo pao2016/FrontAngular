@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
 import {Estanteria} from './estanteria';
+import { Asigment } from './asigment';
 
 const base_url = environment.base_url;
 @Injectable({
@@ -38,5 +39,27 @@ export class EstanteriaService {
  
    }
 
+   cargaProductos(): any {
+    return this.http.get(`${base_url}/productos`).pipe(
+      map(res => res)
+    );
+  }
 
+  crearEstanteriProducto(asig: Asigment): any {
+    let params ={
+      idEstante : asig.idEstante,
+      idProducto : asig.idProducto,
+      posicion :asig.posicion,
+   
+ 
+    }
+     return this.http.post(`${base_url}/estanteProducto/create`, params);
+ 
+   }
+
+   cargaEstanteProductos(): any {
+    return this.http.get(`${base_url}/estanteProducto`).pipe(
+      map(res => res)
+    );
+  }
 }

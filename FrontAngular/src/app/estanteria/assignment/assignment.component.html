@@ -1,3 +1,4 @@
+<p-toast position="top-center"></p-toast>
 <p-fieldset legend="Posiciones" [toggleable]="true">
     <article class="ui-g-8">
         <p-card>
@@ -38,14 +39,14 @@
                 </section>
 
                 <article class="ui-g-20">
-                    <p-multiSelect [options]="items" [(ngModel)]="itemsSelected" optionLabel="Producto"
-                        optionDisabled="inactive"></p-multiSelect>
+                    <p-multiSelect [options]="listProductos" [(ngModel)]="itemsSelected" optionLabel="nombre"
+                        optionDisabled="inactive" formControlName="item"></p-multiSelect>
                 </article>
             </article>
 
             <article class="form-group">
                 <section class="ui-g-4">
-                    <button pButton type="button" label="Guardar" class="p-button-help"></button>
+                    <button pButton type="button" label="Guardar" class="p-button-help" (click)="save()"></button>
                 </section>
             </article>
         </article>
