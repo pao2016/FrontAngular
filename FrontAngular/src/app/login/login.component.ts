@@ -69,7 +69,7 @@ export class LoginComponent implements OnInit {
 
       this.messageService.add({ severity: 'success', summary: 'Información', detail: 'Login correcto' });
       setTimeout(() => {
-        this.router.navigate(['/usuario/index']);
+        this.router.navigate(['/panel']);
       }, 500);
     }
     else {

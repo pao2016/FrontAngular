@@ -19,7 +19,16 @@ import {ListboxModule} from 'primeng/listbox';
 import {ButtonModule} from 'primeng/button';
 import { SharedComponent } from './shared/shared.component';
 import {TableModule} from 'primeng/table';
-
+import { PanelComponent } from './panel/panel.component';
+import {ToolbarModule} from 'primeng/toolbar';
+import { EstanteriaComponent } from './estanteria/estanteria.component';
+import { CreateEstanteriaComponent } from './estanteria/create/create-estanteria.component';
+import { FormEstanteriaComponent } from './estanteria/form/form-estanteria.component';
+import { IndexEstanteriaComponent } from './estanteria/index/index-estanteria.component';
+import { AssignmentComponent } from './estanteria/assignment/assignment.component';
+import {FieldsetModule} from 'primeng/fieldset';
+import {CardModule} from 'primeng/card';
+import {MultiSelectModule} from 'primeng/multiselect';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +37,13 @@ import {TableModule} from 'primeng/table';
     CreateUsuarioComponent,
     FormUsuarioComponent,
     IndexUsuarioComponent,
-    SharedComponent
+    SharedComponent,
+    PanelComponent,
+    EstanteriaComponent,
+    CreateEstanteriaComponent,
+    FormEstanteriaComponent,
+    IndexEstanteriaComponent,
+    AssignmentComponent
 
     
   ],
@@ -46,7 +61,11 @@ import {TableModule} from 'primeng/table';
     ToastModule,
     ListboxModule,
     ButtonModule,
-    TableModule
+    TableModule,
+    ToolbarModule,
+    FieldsetModule,
+    CardModule,
+    MultiSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

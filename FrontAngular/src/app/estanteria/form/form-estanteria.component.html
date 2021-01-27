@@ -1,0 +1,105 @@
+<form [formGroup]="estanteForm" class="form">
+    <p-toast position="top-center"></p-toast>
+    <article class="login-form"> 
+  
+      <article class="ui-g-12">
+          <section class="ui-g-4" class="form-control">
+            <label for="codigo"> Codigo</label>
+          </section>
+          <section class="ui-g-8" class="form-control">
+            <input pInputText id="codigo" formControlName="codigo" [readOnly]="viewMode"/>
+            <article *ngIf="codigo.invalid && (codigo.dirty || codigo.touched)">
+              <p class="form-control-incorrect "
+                 *ngIf="codigo.errors.required"
+              >Campo obligatorio</p>
+              <p class="form-control-incorrect "
+                 *ngIf="codigo.errors.minlength"
+              >Debe agregar más de 3 caracteres</p>
+              <p class="form-control-incorrect "
+                 *ngIf="codigo.errors.pattern"
+              >Sólo puede agregar letras.</p>
+              <p class="form-control-incorrect "
+                 *ngIf="codigo.errors.whitespace"
+              >Ingrese información válida </p>
+            </article>
+          </section>
+        </article>
+  
+  
+  
+      <article class="ui-g-12">
+        <section class="ui-g-4" class="form-control">
+          <label for="descripcion">Descripción</label>
+        </section>
+        <section class="ui-g-8"  class="form-control">
+          <input pInputText id="descripcion" formControlName="descripcion" autofocus [readOnly]="viewMode"/>
+          <article *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)">
+            <p class="form-control-incorrect "
+               *ngIf="descripcion.errors.required"
+            >Campo obligatorio</p>
+            <p class="form-control-incorrect "
+               *ngIf="descripcion.errors.minlength"
+            >Debe agregar más de 3 caracteres</p>
+            <p class="form-control-incorrect "
+               *ngIf="descripcion.errors.pattern"
+            >Sólo puede agregar letras.</p>
+            <p class="form-control-incorrect "
+               *ngIf="descripcion.errors.whitespace"
+            >Ingrese información válida </p>
+          </article>
+        </section>
+      </article>
+  
+  
+  
+      <section class="ui-g-12" >
+        <article class="ui-g-4" class="form-control">
+          <label for="fila">Fila</label>
+        </article>
+        <article class="ui-g-8">
+          <input pInputText id="fila" formControlName="fila" [readOnly]="viewMode"/>
+          <article *ngIf="fila.invalid && (fila.dirty || fila.touched)">
+            <p class="form-control-incorrect "
+               *ngIf="fila.errors.required"
+            >Campo obligatorio</p>
+            <p class="form-control-incorrect "
+               *ngIf="fila.errors.fila"
+            >Formato Incorrecto</p>
+            <p class="form-control-incorrect "
+               *ngIf="fila.errors.whitespace"
+            >Ingrese información válida </p>
+          </article>
+        </article>
+      </section>
+  
+      <section class="ui-g-12" >
+          <article class="ui-g-4" class="form-control">
+            <label for="columna">Columna</label>
+          </article>
+          <article class="ui-g-8">
+            <input pInputText id="columna" formControlName="columna" [readOnly]="viewMode"/>
+            <article *ngIf="columna.invalid && (columna.dirty || columna.touched)">
+              <p class="form-control-incorrect "
+                 *ngIf="columna.errors.required"
+              >Campo obligatorio</p>
+              <p class="form-control-incorrect "
+                 *ngIf="columna.errors.columna"
+              >Formato Incorrecto</p>
+              <p class="form-control-incorrect "
+                 *ngIf="columna.errors.whitespace"
+              >Ingrese información válida </p>
+            </article>
+          </article>
+        </section>
+    
+  
+  
+      <section class="ui-g-2" class="form-control">
+        <button type="button" pButton class="ui-button-success" icon="pi pi-check"
+                (click)="save()"
+                label="Guardar"></button>
+      </section>
+    </article>
+    </form>
+    
+  

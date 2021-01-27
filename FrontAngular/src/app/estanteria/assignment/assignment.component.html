@@ -1,0 +1,53 @@
+<p-fieldset legend="Posiciones" [toggleable]="true">
+    <article class="ui-g-8">
+        <p-card>
+            <li *ngFor="let fila of posicionFilas">
+                <p *ngFor="let col of posicionColumnas">
+                    {{ fila}} - {{col}}
+                </p>
+            </li>
+        </p-card>
+    </article>
+</p-fieldset>
+<p-card>
+    <form [formGroup]="asigmenForm">
+        <article class="login-form">
+            <section class="form-group">
+                <section class="ui-g-4">
+                    <label for="posicion" style="margin: 6px;">Ingrese la posicion</label>
+                </section>
+
+
+                <section class="form-group">
+                    <input pInputText id="posicion" formControlName="posicion" autofocus />
+                    <article *ngIf="posicion.invalid && (posicion.dirty || posicion.touched)">
+                        <p class="help is-danger is-size-6" *ngIf="posicion.errors.required">Campo obligatorio</p>
+                        <p class="help is-danger is-size-6" *ngIf="posicion.errors.minlength">Debe agregar más de 3
+                            caracteres
+                        </p>
+
+                        <p class="help is-danger is-size-6" *ngIf="posicion.errors.whitespace">Ingrese información
+                            válida
+                        </p>
+                    </article>
+                </section>
+            </section>
+            <article class="form-group">
+                <section class="ui-g-4">
+                    <label for="posicion" style="margin: 6px;">Producto</label>
+                </section>
+
+                <article class="ui-g-20">
+                    <p-multiSelect [options]="items" [(ngModel)]="itemsSelected" optionLabel="Producto"
+                        optionDisabled="inactive"></p-multiSelect>
+                </article>
+            </article>
+
+            <article class="form-group">
+                <section class="ui-g-4">
+                    <button pButton type="button" label="Guardar" class="p-button-help"></button>
+                </section>
+            </article>
+        </article>
+    </form>
+</p-card>
