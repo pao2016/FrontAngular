@@ -47,8 +47,8 @@ export class EstanteriaService {
 
   crearEstanteriProducto(asig: Asigment): any {
     let params ={
-      idEstante : asig.idEstante,
-      idProducto : asig.idProducto,
+      idEstante : +asig.idEstante,
+      idProducto : +asig.idProducto,
       posicion :asig.posicion,
    
  

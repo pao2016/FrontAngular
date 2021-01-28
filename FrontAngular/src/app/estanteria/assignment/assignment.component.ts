@@ -107,7 +107,7 @@ export class AssignmentComponent implements OnInit {
   getValuesForm() {
     const ASIG = new Asigment();
     ASIG.posicion = this.posicion.value;
-    ASIG.idProducto = this.itemsSelected[0].id;
+    ASIG.idProducto = +this.itemsSelected[0].id;
     ASIG.idEstante = +this.idEstanteria;
     return ASIG;
   }
@@ -116,6 +116,7 @@ export class AssignmentComponent implements OnInit {
 
     const ASIG = this.getValuesForm();
     const valid = this.valid();
+    console.log("valores a registrar", ASIG);
    
     if (!valid) {
       this.estanteriaService.crearEstanteriProducto(ASIG).subscribe((resp: any) => {
@@ -134,7 +135,6 @@ export class AssignmentComponent implements OnInit {
       this.messageService.add({ severity: 'error', summary: 'Información', detail: 'Ups!, La posicion no esta disponible' });
 
     }
-
   }
 
   valid(): boolean {

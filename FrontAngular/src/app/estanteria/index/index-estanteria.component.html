@@ -1,40 +1,64 @@
 <div class="ui-fluid">
-    <div class="card ui-g">
-      <div class="ui-g-12">
-        <p-toast position="top-center"></p-toast>
-        <h2>Gestion de estanteria </h2>
-        <section class="header-section">
-          
-         <p-button class="button-pdf" label="PDF" icon="pi pi-file-pdf" (click)="exportPdf()"></p-button> 
-          <article class="ml-auto">
-         <p-button class="ui-button-success" icon="pi pi-plus" iconPos="right" label="Registrar"   (click)="redirect('create')"></p-button> 
-          </article>
-        </section>
+  <div class="card ui-g">
+    <div class="ui-g-12">
+      <p-toast position="top-center"></p-toast>
+      <h2>Gestion de estanteria </h2>
+      <section class="header-section">
+
+        <p-button class="button-pdf" label="PDF" icon="pi pi-file-pdf" (click)="exportPdf()"></p-button>
+        <p-button type="text" (click)="display = true" icon="pi pi-plus" label="Ver estantes con productos"></p-button>
+        <article class="ml-auto">
+          <p-button class="ui-button-success" icon="pi pi-plus" iconPos="right" label="Registrar"
+            (click)="redirect('create')"></p-button>
+        </article>
+      </section>
       <p-table [columns]="cols" [value]="lisEstanterias">
-            <ng-template pTemplate="header" let-columns>
-                <tr>
-                    <th *ngFor="let col of columns">
-                        {{col.header}}
-                    </th>
-                </tr>
-                <th width="100px">
-                  Opciones
-              </th>
-            </ng-template>
-            <ng-template pTemplate="body" let-rowData let-columns="columns">
-                <tr>
-                    <td *ngFor="let col of columns">
-                        {{rowData[col.field]}}
-                    </td>
-                </tr>
-                <td>
-                  
-                  <button pButton class="ui-button-success" style="margin-left: 5px;" type="button" icon="pi pi-pencil" pTooltip="Editar"
-                  (click)="redirect('edit', rowData.id)"></button>
-              
-            </ng-template>
-        </p-table> 
-      </div>
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th *ngFor="let col of columns">
+              {{col.header}}
+            </th>
+            <th width="100px">
+              Opciones
+            </th>
+          </tr>
+
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+          <tr>
+            <td *ngFor="let col of columns">
+              {{rowData[col.field]}}
+            </td>
+            <td>
+              <button pButton class="ui-button-success" style="margin-left: 5px;" type="button" icon="pi pi-pencil"
+                pTooltip="Editar" (click)="redirect('edit', rowData.id)"></button>
+            </td>
+          </tr>
+          <td>
+
+        </ng-template>
+      </p-table>
     </div>
   </div>
-  
+
+</div>
+
+<p-sidebar [(visible)]="display" [fullScreen]="true">
+  <h1> Las Estantes y las posiciones ocupadas </h1>
+  <p-table [columns]="cols2" [value]="estantePosicion">
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of columns">
+          {{col.header}}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr>
+        <td *ngFor="let col of columns">
+          {{rowData[col.field]}}
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-sidebar>

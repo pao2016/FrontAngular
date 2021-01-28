@@ -29,6 +29,8 @@ import { AssignmentComponent } from './estanteria/assignment/assignment.componen
 import {FieldsetModule} from 'primeng/fieldset';
 import {CardModule} from 'primeng/card';
 import {MultiSelectModule} from 'primeng/multiselect';
+import {DialogModule} from 'primeng/dialog';
+import {SidebarModule} from 'primeng/sidebar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +67,9 @@ import {MultiSelectModule} from 'primeng/multiselect';
     ToolbarModule,
     FieldsetModule,
     CardModule,
-    MultiSelectModule
+    MultiSelectModule,
+    DialogModule,
+    SidebarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
